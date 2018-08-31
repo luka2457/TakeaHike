@@ -12,10 +12,45 @@ body {
     font-family: 'Ubuntu Condensed', sans-serif;
 }
 
-header {
+#header {
     font-family: 'Amatic SC', cursive;
+    text-align: center;
 }
 
 .backgroundImage {
      opacity: .5;
 }
+.container {
+    display: grid;
+    grid-template-rows: 60% 20% 20%;
+    grid-template-columns: 15% 15% 30% auto;
+    grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+  }
+
+  .item-1 {
+    grid-area: header;
+  }
+  .item-2 {
+    grid-area: search;
+  }
+  .item-3 {
+    grid-area: results;
+  }
+  .item-4 {
+    grid-area: details;
+  }
+  .item-5 {
+    grid-area: footer;
+  }
+  .item-6 {
+    grid-area: footer;
+  }
+  .item-7 {
+    grid-area: footer;
+  }
+  .item-8 {
+    grid-area: footer;
+  }
