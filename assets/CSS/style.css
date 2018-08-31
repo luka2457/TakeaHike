@@ -1,9 +1,16 @@
+/* Color Scheme
+Navy Blue #18121E
+Gun Metal #233237
+Rusty Red #984B43
+Warm Yellow #EAC67A */
+
+
 body, html {
     height: 100%;
     margin: 0;
 }
+
 body {
-    color: rgb(68, 73, 121);
     height:100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,14 +19,42 @@ body {
     font-family: 'Ubuntu Condensed', sans-serif;
 }
 
+<<<<<<< HEAD
 #header {
     font-family: 'Amatic SC', cursive;
     text-align: center;
+=======
+.container {
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    grid-template-rows: 15% 15% 35% 35%;
+    grid-template-areas:
+        "header header header"
+        "search recent-1 recent-2"
+        "results weather weather"
+        "details googleMaps googleMaps";
+}
+
+#header img {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+h1 {
+    display: inline-block;
+    font-family: 'Amatic SC', cursive;
+    font-size: 100px;
+    color: #233237;
+    /* text-align: center; */
+    margin: 0 auto;
+    margin-left: 20px;
+>>>>>>> 82531706a5bbaa399002dd8a2dc499c937a47e3f
 }
 
 .backgroundImage {
      opacity: .5;
 }
+<<<<<<< HEAD
 .container {
     display: grid;
     grid-template-rows: 60% 20% 20%;
@@ -54,3 +89,42 @@ body {
   .item-8 {
     grid-area: footer;
   }
+=======
+
+.item-1 {
+    grid-area: header;
+}
+
+.item-2 {
+    grid-area: search;
+    margin-left: 20px;
+}
+
+.item-3 {
+    grid-area: results;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.item-4 {
+    grid-area: details;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.item-5 {
+    grid-area: recent-1;
+}
+
+.item-6 {
+    grid-area: recent-2;
+}
+
+.item-7 {
+    grid-area: weather;
+}
+
+.item-8 {
+    grid-area: googleMaps;
+}
+>>>>>>> 82531706a5bbaa399002dd8a2dc499c937a47e3f
