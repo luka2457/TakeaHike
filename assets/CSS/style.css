@@ -1,0 +1,21 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+body {
+    color: rgb(68, 73, 121);
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+header {
+    font-family: 'Amatic SC', cursive;
+}
+
+.backgroundImage {
+     opacity: .5;
+}
