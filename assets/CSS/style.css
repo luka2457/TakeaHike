@@ -38,6 +38,8 @@ h3 {
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 30px;
     color: #233237;
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 .container {
@@ -62,7 +64,7 @@ h3 {
 
 .item-3 {
     grid-area: results;
-    margin-left: 20px;
+    margin: 20px;
     padding: 10px;
 }
 
@@ -86,4 +88,17 @@ h3 {
 
 .item-8 {
     grid-area: googleMaps;
+}
+
+#results {
+    background-color: #EAC67A;
+}
+
+thead {
+    text-align: left;
+    font-size: 20px;
+}
+
+td {
+    padding-right: 50px;
 }
