@@ -24,36 +24,50 @@
                 <h1>Take A Hike</h1>
             </span>
         </div>
-        
+
         <div class="item item-2">
             <form class="searchField">
                 <h3>Search Hikes by Zip Code</h3>
                 <input type="number" placeholder="Zip Code" name="search" id="zip">
                 <button type="submit" id="search">Submit</button>
             </form>
-        
+
         </div>
-        
+
         <div class="item item-3" id="results">
             <h3>Results</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Trail Name</th>
+                        <th scope="col">Length</th>
+                        <th scope="col">Trail Condition</th>
+                        <th scope="col">Stars</th>
+                        <th scope="col">Difficulty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
         </div>
-        
+
         <div class="item item-4" id="details">
             <h3>Details</h3>
         </div>
-        
+
         <div class="item item-5" id="recent-1">
             <h3>Recent 1</h3>
         </div>
-        
+
         <div class="item item-6" id="recent-2">
             <h3>Recent 2</h3>
         </div>
-        
+
         <div class="item item-7" id="weather">
             <h3>Weather</h3>
         </div>
-        
+
         <div class="item item-8" id="googleMaps">
             <h3>Google Maps</h3>
         </div>
@@ -70,6 +84,8 @@
 
 
     <script type="text/javascript" src="assets/javascript/App.js"> </script>
+    <!-- Google API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt7o9xiwoXtH_B5ke_LoqciN9GURNK9Lo&callback=initMap"></script>
 </body>
 
 </html>
