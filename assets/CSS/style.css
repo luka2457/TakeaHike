@@ -27,10 +27,16 @@ h1 {
     display: inline-block;
     font-family: 'Amatic SC', cursive;
     font-size: 150px;
-    color: #233237;
+    color: #18121E;
     /* text-align: center; */
     margin: 0 auto;
     margin-left: 20px;
+}
+
+h2 {
+    color: #18121E;
+    text-align: center;
+    padding: 10px;
 }
 
 h3 {
@@ -125,7 +131,7 @@ th {
 
 td {
     padding: 10px 50px 10px 0px;
-    /* border-top: 1px solid #EAC67A; */
+    border-top: 1px dotted #EAC67A;
 }
 
 tr {
