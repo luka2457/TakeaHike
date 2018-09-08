@@ -14,11 +14,11 @@
     <!--Our Icon -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!--Our grid css styling-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--Jquery -->
-</head>
 
-<body background="assets/images/nourdine-diouane-77072-unsplash.jpg" class="img-responsive backgroundImage">
+</head>
+<!-- background="assets/images/nourdine-diouane-77072-unsplash.jpg" class="img-responsive backgroundImage" -->
+
+<body>
     <div class="container">
         <div class="item item-1" id="header">
             <span>
@@ -48,7 +48,7 @@
                         <th scope="col">Difficulty</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="trailResults">
                 </tbody>
             </table>
 
@@ -67,7 +67,14 @@
         </div>
 
         <div class="item item-7" id="weather">
-            <h3>Weather</h3>
+
+            <table class="table">
+                <thead>
+                    <h3>Weather</h3>
+                </thead>
+                <tbody id="weatherConditions">
+                </tbody>
+            </table>
         </div>
 
         <div class="item item-8" id="googleMaps">
@@ -81,13 +88,18 @@
     </div>
 
 
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 
-
-
-
-    <script type="text/javascript" src="assets/javascript/App.js"> </script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="assets/Javascript/App.js"> </script>
+    
     <!-- Google API -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt7o9xiwoXtH_B5ke_LoqciN9GURNK9Lo&callback=initMap"></script>
+    <!-- <script async defer src=“https://maps.googleapis.com/maps/api/js?key=AIzaSyDt7o9xiwoXtH_B5ke_LoqciN9GURNK9Lo&callback=initMap”></script> -->
+
 </body>
 
 </html>
