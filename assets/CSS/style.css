@@ -43,9 +43,13 @@ h3 {
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
     font-size: 40px;
-    color: #233237;
+    color: #984B43;
     margin: 0 auto;
     margin-bottom: 15px;
+}
+
+#headDetails {
+    color: #EAC67A;
 }
 
 .container {
@@ -55,8 +59,8 @@ h3 {
     grid-template-areas:
         "header header header"
         "search recent-1 recent-2"
-        "results weather weather"
-        "details googleMaps googleMaps";
+        "results results weather"
+        "details trailImage trailImage";
 }
 
 .item-1 {
@@ -76,7 +80,8 @@ h3 {
 
 .item-3 {
     grid-area: results;
-    margin: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
     padding: 10px;
 }
 
@@ -98,12 +103,14 @@ h3 {
 
 .item-7 {
     grid-area: weather;
-    margin: 20px;
+    margin: 0px 20px 20px 20px;
     padding: 10px;
 }
 
 .item-8 {
-    grid-area: googleMaps;
+    grid-area: trailImage;
+    margin-right: 20px;
+    padding: 10px;
 }
 
 #results {
@@ -118,6 +125,25 @@ h3 {
     border-style: solid;
     border-width: 2px;
     color: #233237;
+}
+
+#details {
+    background-origin: content-box;
+    background-color: #984B43;
+    font-size: 18px;
+    color: #EAC67A;
+    line-height: 30px;
+}
+
+#hikeImage {
+    background-color: #984B43;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 thead {
@@ -136,4 +162,39 @@ td {
 
 tr {
     border-top: 1px solid #EAC67A;
+}
+
+.recentSearchText {
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    color: #233237;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+a:link {
+    color: #EAC67A;
+}
+
+/* mouse over link */
+a:hover {
+    color: #EAC67A;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr 3 fr;
+        float: left;
+        grid-template-areas:
+            "header header header"
+            "search recent-1 recent-2"
+            "results results weather"
+            "details trailImage trailImage";
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
 }
