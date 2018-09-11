@@ -17,6 +17,26 @@ $(document).ready(function () {
     var dataRef = firebase.database();
     var zip = 0;
 
+    function validZip() {
+
+        var valid = /^\d{5}$/.test(zip);
+        console.log(valid);
+    
+        if (valid === false) {
+            var inCorrect = $("#incorrectZip");
+            var errorMsg = $("<h5>").text("Incorrect zip code format. Please try again.");
+
+            inCorrect.append(errorMsg);
+
+        } else {
+            var zipCorrect = $("#incorrectZip");
+            var validMsg = $("<h5>").text("Search results for " + zip + ".");
+
+            zipCorrect.append(validMsg);
+        };
+
+    };
+
     function displayHikes() {
 
         $("#trailResults").empty();
@@ -43,22 +63,18 @@ $(document).ready(function () {
                     var diffic = response.trails[i].difficulty;
 
                     var tBody = $("#trailResults");
-                    var tRow = $("<tr>");
 
                     var hikeInfo = response.trails[i];
 
 
-                    var trailName = $("<td>").text(trail);
-                    var trailLength = $("<td>").text(lngth);
-                    var trailConditions = $("<td>").text(condit);
-                    var trailStars = $("<td>").text(stars);
-                    var trailDifficulty = $("<td>").text(diffic);
-                    var button = $("<td><button class='hikeData' hikeData='" + hikeInfo.name + "'>More Info</button>");
+                    var trailName = $("<span id='trail'>").text(trail);
+                    var trailLength = $("<span id='trail'>").text(lngth);
+                    var trailConditions = $("<span id='trail'>").text(condit);
+                    var trailStars = $("<span id='trail'>").text(stars);
+                    var trailDifficulty = $("<span id='trail'>").text(diffic);
+                    var button = $("<span id='trail'><button class='hikeData' hikeData='" + hikeInfo.name + "'>More Info</button>");
 
-                    // Append the newly created table data to the table row
-                    tRow.append(trailName, trailLength, trailConditions, trailStars, trailDifficulty, button);
-                    // Append the table row to the table body
-                    tBody.append(tRow);
+                    tBody.append(trailName, trailLength, trailConditions, trailStars, trailDifficulty, button);
                 };
 
                 getHikeInfo();
@@ -113,20 +129,29 @@ $(document).ready(function () {
         // function handles events where a submit button is clicked
         $("#search").on("click", function (event) {
             event.preventDefault();
+            validZip();
 
             $("#trailResults").empty();
             $("#weatherConditions").empty();
+            $("#detailHike").empty();
+            $("#hikeImage").empty();
 
             // This line grabs the input from the textbox
             zip = $("#zip").val().trim();
+            console.log(zip);
             weatherPull(zip);
+            $("#zip").val("");
         });
         displayHikes();
+
     };
 
     function weatherPull(zip) {
         $("#trailResults").empty();
         $("#weatherConditions").empty();
+        $("#detailHike").empty();
+        $("#hikeImage").empty();
+
         $.ajax({
             url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&APPID=1b51cc23ba0f775c5bf239d8814745e3",
             method: "GET"
@@ -142,25 +167,20 @@ $(document).ready(function () {
             var humidity = response.main.humidity;
 
 
-            var tBody = $("#weatherConditions");
-            var tRow = $("<tr>");
+            var detailWeather = $("#weatherConditions");
 
-            var cityName = $("<tr>").html("<td>City: </td><td>" + name + "</td>");
-            var currentCondit = $("<tr>").html("<td>Conditions: </td><td>" + weather + "</td>");
-            var currentTemp = $("<tr>").html("<td>Current temp: </td><td>" + tempFix + "</td>");
-            var windSpeed = $("<tr>").html("<td>Wind Speed: </td><td>" + wind + " mph</td>");
-            var currentHumidity = $("<tr>").html("<td>Humidity: </td><td>" + humidity + "%</td>");
+            var cityName = $("<span id='weatherResults'>").html("City: " + name);
+            var currentCondit = $("<span id='weatherResults'>").html("Conditions: " + weather);
+            var currentTemp = $("<span id='weatherResults'>").html("Current temp: " + tempFix + "&#x2109;");
+            var windSpeed = $("<span id='weatherResults'>").html("Wind Speed: " + wind + " mph");
+            var currentHumidity = $("<span id='weatherResults'>").html("Humidity: " + humidity + "%");
 
+            // var currentTemp = $("<tr>").html("<td>Current temp: </td><td>" + tempFix + "&#x2109;</td>");
+            // var windSpeed = $("<tr>").html("<td>Wind Speed: </td><td>" + wind + " mph</td>");
+            // var currentHumidity = $("<tr>").html("<td>Humidity: </td><td>" + humidity + "%</td>");
 
-
-            // Append the newly created table data to the table row
-            tRow.append(cityName);
-            tRow.append(currentCondit);
-            tRow.append(currentTemp);
-            tRow.append(windSpeed);
-            tRow.append(currentHumidity);
             // Append the table row to the table body
-            tBody.append(tRow);
+            detailWeather.append(cityName, currentCondit, currentTemp, windSpeed, currentHumidity);
 
             var lon = response.coord.lon;
             var lat = response.coord.lat;
