@@ -231,6 +231,21 @@ a:hover {
     color: #EAC67A;
 }
 
+@media (max-width: 980px) {
+    .container {
+        display: grid;
+        grid-template-columns: 50% 15% 35%;
+        grid-template-rows: 15% 15% 35% 35%;
+        grid-template-areas:
+            "header header header"
+            "search search recent"
+            "weather weather weather"
+            "results results results"
+            "details trailImage trailImage"
+            "footer footer footer";
+    }
+}
+
 /* Responsive sizing for iPhone or similar */
 
 @media (max-width: 500px) {
