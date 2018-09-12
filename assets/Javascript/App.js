@@ -60,7 +60,7 @@ $(document).ready(function () {
         $("#hikeImage").empty();
 
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&APPID=1b51cc23ba0f775c5bf239d8814745e3",
+            url: "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&APPID=1b51cc23ba0f775c5bf239d8814745e3",
             method: "GET"
         }).then(function (response) {
             console.log(response);
