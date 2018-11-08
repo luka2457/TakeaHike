@@ -65,7 +65,7 @@ button {
 .container {
     display: grid;
     grid-template-columns: 60% 20% 20%;
-    grid-template-rows: 15% 15% 35% 35%;
+    grid-template-rows: auto;
     grid-template-areas:
         "header header header"
         "search search recent"
@@ -235,7 +235,7 @@ a:hover {
     .container {
         display: grid;
         grid-template-columns: 50% 15% 35%;
-        grid-template-rows: 15% 15% 35% 35%;
+        grid-template-rows: auto;
         grid-template-areas:
             "header header header"
             "search search recent"
